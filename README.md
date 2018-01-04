@@ -14,6 +14,31 @@ nvm use
 
 ## Setup
 
+Install Javascript dependencies:
+
 ```bash
 yarn install
 ```
+
+## Build & Deploy
+
+Bundle the code into a zip file, and deploy the stack in AWS:
+
+*Note: You need an s3 bucket to upload the zip file to.  Edit your package.json file and replace ENTER_S3_BUCKET_HERE with the bucket name*
+
+*Note: requires aws command line utility, which can be installed with homebrew (brew install awscli)*
+
+```bash
+yarn run build
+yarn run deploy
+```
+
+## Development
+
+You can run the lambda handlers locally with jeffws-dev-server:
+
+```bash
+yarn run start
+```
+
+Then connect to localhost:3000
