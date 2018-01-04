@@ -24,7 +24,9 @@ yarn install
 
 Bundle the code into a zip file, and deploy the stack in AWS:
 
-*Note: You need an s3 bucket to upload the zip file to.  Edit your package.json file and replace ENTER_S3_BUCKET_HERE with the bucket name*
+*Note: you need an s3 bucket to upload the zip file to.  Edit your package.json file and replace ENTER_S3_BUCKET_HERE with the bucket name*
+
+*Note: you need to update the environment variables in template.yaml before deploying*
 
 *Note: requires aws command line utility, which can be installed with homebrew (brew install awscli)*
 

@@ -20,6 +20,11 @@ Resources:
       Handler: app/handlers/auth.oauth
       Runtime: nodejs6.10
       CodeUri: ./package/surf-bot.zip
+      Environment:
+        Variables:
+          SLACK_CLIENT_ID: SLACK_CLIENT_ID
+          SLACK_CLIENT_SECRET: SLACK_CLIENT_SECRET
+          SURFLINE_BASE_URL: SURFLINE_BASE_URL
       Events:
         GetOauth:
           Type: Api
@@ -33,6 +38,9 @@ Resources:
       Handler: app/handlers/surf_reports.show
       Runtime: nodejs6.10
       CodeUri: ./package/surf-bot.zip
+      Environment:
+        Variables:
+          SURFLINE_BASE_URL: SURFLINE_BASE_URL
       Events:
         PostSurfReport:
           Type: Api
