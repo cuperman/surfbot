@@ -11,7 +11,7 @@ const extractReportData = (report) => {
     longText: report.Analysis.generalText[0],
     text: buildReportText(report),
     condition: report.Analysis.generalCondition
-  }
+  };
 };
 
 const processReports = (reports) => {
@@ -19,7 +19,7 @@ const processReports = (reports) => {
     reports
       .map(val => JSON.parse(val))
       .map(val => extractReportData(val))
-  )
+  );
 };
 
 module.exports = {

@@ -1,5 +1,4 @@
 module.exports = {
-  port: process.env.PORT || 8080,
   slack: {
     oauthEndpoint: process.env.SLACK_OAUTH_ENDPOINT,
     webhook: process.env.SLACK_WEBHOOK_ENDPOINT,

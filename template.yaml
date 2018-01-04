@@ -1,0 +1,46 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: surf-bot - a slack bot to check the surf
+
+Outputs:
+  AccountId:
+    Value: !Ref AWS::AccountId
+  StackId:
+    Value: !Ref AWS::StackId
+  StackName:
+    Value: !Ref AWS::StackName
+  Region:
+    Value: !Ref AWS::Region
+
+Resources:
+
+  AuthOauth:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: app/handlers/auth.oauth
+      Runtime: nodejs6.10
+      CodeUri: ./package/surf-bot.zip
+      Events:
+        GetOauth:
+          Type: Api
+          Properties:
+            Method: GET
+            Path: /oauth
+
+  SurfReport:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: app/handlers/surf_reports.show
+      Runtime: nodejs6.10
+      CodeUri: ./package/surf-bot.zip
+      Events:
+        PostSurfReport:
+          Type: Api
+          Properties:
+            Method: POST
+            Path: /surf
+        GetSurfReport:
+          Type: Api
+          Properties:
+            Method: GET
+            Path: /surf
