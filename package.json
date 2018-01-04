@@ -18,7 +18,7 @@
     "build:install": "cd package/surf-bot && yarn install --production",
     "build:archive": "cd package/surf-bot && zip -r ../surf-bot.zip *",
     "deploy": "yarn run deploy:package && yarn run deploy:stack && yarn run --silent deploy:output | tee ./package/stacks.json",
-    "deploy:package": "aws cloudformation package --template-file template.yaml --s3-bucket cloudformation-packages --output-template-file ./package/template.yaml",
+    "deploy:package": "aws cloudformation package --template-file template.yaml --s3-bucket ENTER_S3_BUCKET_HERE --output-template-file ./package/template.yaml",
     "deploy:stack": "aws cloudformation deploy --template-file ./package/template.yaml --stack-name surf-bot --capabilities CAPABILITY_IAM",
     "deploy:output": "aws cloudformation describe-stacks --stack-name surf-bot",
     "deploy:log": "aws cloudformation describe-stack-events --stack-name surf-bot | less",
