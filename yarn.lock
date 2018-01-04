@@ -810,9 +810,9 @@ isstream@~0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/isstream/-/isstream-0.1.2.tgz#47e63f7af55afa6f92e1500e690eb8b8529c099a"
 
-jeffws-service@next:
-  version "1.0.0-alpha.4"
-  resolved "https://artifact.devsnc.com/content/groups/npm-all/jeffws-service/-/jeffws-service-1.0.0-alpha.4.tgz#72b182f5d35f4af806b4f99562266bcec2e5ac8d"
+jeffws-service@^1.0.0-alpha.5:
+  version "1.0.0-alpha.5"
+  resolved "https://registry.yarnpkg.com/jeffws-service/-/jeffws-service-1.0.0-alpha.5.tgz#07218252d3229b3bf8d897c6982d0195d349ebc5"
   dependencies:
     aws-sdk "^2.153.0"
     express "^4.16.2"
