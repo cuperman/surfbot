@@ -4,3 +4,4 @@ node_modules/
 .env
 .nvmrc
 package/
+.tm_properties

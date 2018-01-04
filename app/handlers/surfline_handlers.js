@@ -3,7 +3,7 @@ const { buildMessage } = require('../lib/slack');
 
 // POST /surf
 // GET /surf
-exports.show = (event, context, callback) => {
+exports.report = (event, context, callback) => {
   getReport().then(reports => {
     const formattedReports = buildMessage(reports);
 

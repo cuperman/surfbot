@@ -5,7 +5,7 @@ const console = require('console');
 // GET /oauth
 exports.oauth = (event, context, callback) => {
   const code = event.queryStringParameters.code;
-  const { clientId, clientSecret } = config.slack;
+  const { oauthEndpoint, clientId, clientSecret } = config.slack;
 
   if (!code) {
     console.log('Missing code query string param');
@@ -16,6 +16,7 @@ exports.oauth = (event, context, callback) => {
 
   request({
     method: 'GET',
+    url: oauthEndpoint,
     qs: {
       code,
       client_id: clientId,

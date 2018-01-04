@@ -17,14 +17,14 @@ Resources:
   AuthOauth:
     Type: AWS::Serverless::Function
     Properties:
-      Handler: app/handlers/auth.oauth
+      Handler: app/handlers/slack_handlers.oauth
       Runtime: nodejs6.10
       CodeUri: ./package/surf-bot.zip
       Environment:
         Variables:
+          SLACK_OAUTH_ENDPOINT: SLACK_OAUTH_ENDPOINT
           SLACK_CLIENT_ID: SLACK_CLIENT_ID
           SLACK_CLIENT_SECRET: SLACK_CLIENT_SECRET
-          SURFLINE_BASE_URL: SURFLINE_BASE_URL
       Events:
         GetOauth:
           Type: Api
@@ -35,7 +35,7 @@ Resources:
   SurfReport:
     Type: AWS::Serverless::Function
     Properties:
-      Handler: app/handlers/surf_reports.show
+      Handler: app/handlers/surfline_handlers.report
       Runtime: nodejs6.10
       CodeUri: ./package/surf-bot.zip
       Environment:
