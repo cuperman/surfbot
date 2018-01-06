@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+
+// This is a temporary hack to use the appropriate AWS profile when using the CLI tool
+
+const config = require('../.aws.json');
+const profile = config.AwsProfile;
+
+if (profile) {
+  console.log(profile);
+} else {
+  console.log('default');
+}

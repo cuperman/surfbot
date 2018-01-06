@@ -2,6 +2,16 @@ AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: surf-bot - a slack bot to check the surf
 
+Parameters:
+  SlackOauthEndpoint:
+    Type: String
+  SlackClientId:
+    Type: String
+  SlackClientSecret:
+    Type: String
+  SurflineBaseUrl:
+    Type: String
+
 Outputs:
   AccountId:
     Value: !Ref AWS::AccountId
@@ -22,9 +32,9 @@ Resources:
       CodeUri: ./package/surf-bot.zip
       Environment:
         Variables:
-          SLACK_OAUTH_ENDPOINT: SLACK_OAUTH_ENDPOINT
-          SLACK_CLIENT_ID: SLACK_CLIENT_ID
-          SLACK_CLIENT_SECRET: SLACK_CLIENT_SECRET
+          SLACK_OAUTH_ENDPOINT: !Ref SlackOauthEndpoint
+          SLACK_CLIENT_ID: !Ref SlackClientId
+          SLACK_CLIENT_SECRET: !Ref SlackClientSecret
       Events:
         GetOauth:
           Type: Api
@@ -40,7 +50,7 @@ Resources:
       CodeUri: ./package/surf-bot.zip
       Environment:
         Variables:
-          SURFLINE_BASE_URL: SURFLINE_BASE_URL
+          SURFLINE_BASE_URL: !Ref SurflineBaseUrl
       Events:
         PostSurfReport:
           Type: Api

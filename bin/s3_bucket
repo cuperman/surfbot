@@ -1,0 +1,14 @@
+#!/usr/bin/env node
+
+// This is a temporary hack to figure out which s3 bucket to upload lambda code to
+
+const config = require('../.aws.json');
+const bucket = config.S3Bucket;
+
+if (bucket) {
+  console.log(bucket);
+} else {
+  console.error('Please define s3 bucket in .aws.json');
+  process.exit(1);
+}
+

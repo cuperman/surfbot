@@ -1,0 +1,28 @@
+#!/usr/bin/env node
+
+// This is a temporary hack to load the .env variables into the template.yaml during stack deployment
+
+require('dotenv').config();
+
+const {
+  SLACK_OAUTH_ENDPOINT,
+  SLACK_CLIENT_ID,
+  SLACK_CLIENT_SECRET,
+  SURFLINE_BASE_URL
+} = process.env;
+
+if (SLACK_OAUTH_ENDPOINT) {
+  console.log(`SlackOauthEndpoint=${SLACK_OAUTH_ENDPOINT}`);
+}
+
+if (SLACK_CLIENT_ID) {
+  console.log(`SlackClientId=${SLACK_CLIENT_ID}`);
+}
+
+if (SLACK_CLIENT_SECRET) {
+  console.log(`SlackClientSecret=${SLACK_CLIENT_SECRET}`);
+}
+
+if (SURFLINE_BASE_URL) {
+  console.log(`SurflineBaseUrl=${SURFLINE_BASE_URL}`);
+}

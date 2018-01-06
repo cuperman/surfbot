@@ -20,6 +20,28 @@ Install Javascript dependencies:
 yarn install
 ```
 
+## Configuration
+
+Create a .env file with values for the following secret keys:
+
+```bash
+# .env
+SLACK_OAUTH_ENDPOINT="SLACK_OAUTH_ENDPOINT"
+SLACK_WEBHOOK_ENDPOINT="SLACK_WEBHOOK_ENDPOINT"
+SLACK_CLIENT_ID="SLACK_CLIENT_ID"
+SLACK_CLIENT_SECRET="SLACK_CLIENT_SECRET"
+SURFLINE_BASE_URL="SURFLINE_BASE_URL"
+```
+
+Create a .aws.json file with values for the following secret keys:
+
+```json
+{
+  "AwsProfile": "default",
+  "S3Bucket": "my-bucket-for-lambda-code"
+}
+```
+
 ## Build & Deploy
 
 Bundle the code into a zip file, and deploy the stack in AWS:
