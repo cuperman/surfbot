@@ -66,3 +66,12 @@ yarn run start
 Then connect to [localhost:3000](http://locahost:3000)
 
 Or try the API explorer that you get with jeffws-dev-server at [localhost:3000/api_explorer](http://localhost:3000/api_explorer)
+
+## Testing
+
+Run the tests (currently only supports linting, but is still helpful):
+
+```bash
+yarn run test
+```
+
