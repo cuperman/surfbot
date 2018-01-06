@@ -2,6 +2,10 @@
 
 a slack bot to check the surf
 
+## Prereqs
+
+[Install](https://docs.aws.amazon.com/cli/latest/userguide/installing.html) the aws command line client and [configure](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html) it to use your AWS credentials.
+
 ## Node version
 
 This is deployed to AWS lambda using the v6.10.3 Javascript runtime, so I recommend using the same version locally.  Here's an example if you use NVM for version management:
@@ -45,12 +49,6 @@ Create a .aws.json file with values for the following secret keys:
 ## Build & Deploy
 
 Bundle the code into a zip file, and deploy the stack in AWS:
-
-*Note: you need an s3 bucket to upload the zip file to.  Edit your package.json file and replace ENTER_S3_BUCKET_HERE with the bucket name*
-
-*Note: you need to update the environment variables in template.yaml before deploying*
-
-*Note: requires aws command line utility, which can be installed with homebrew (brew install awscli)*
 
 ```bash
 yarn run build
